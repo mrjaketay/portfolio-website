@@ -1,0 +1,33 @@
+.floating-buttons-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+/* Remove individual positioning from component CSS files */
+.theme-toggle,
+.view-toggle-container,
+.back-to-top {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+}
+
+/* Ensure BackToTop stays at the bottom visually */
+.floating-buttons-container .back-to-top {
+  order: 3; /* Ensure it's last */
+}
+
+.floating-buttons-container .theme-toggle {
+  order: 1; /* Top button */
+}
+
+.floating-buttons-container .view-toggle-container {
+  order: 2; /* Middle button */
+}

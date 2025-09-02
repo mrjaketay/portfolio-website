@@ -1,0 +1,51 @@
+/* Reset defaults */  
+body { 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}  
+
+/* Header base styles */  
+.header {  
+  background: var(--bg-secondary);  
+  color: var(--text-primary);  
+  padding: 1rem 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}  
+
+/* Center content */  
+.header-container {  
+  max-width: 1200px;  
+  margin: 0 auto;  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  gap: 1rem;  
+  padding: 0 1rem;
+}   
+
+/* Links styling */  
+.nav-links {  
+  display: flex;  
+  gap: 1.5rem;  
+}  
+
+.nav-links a {  
+  color: var(--text-primary);  
+  text-decoration: none;  
+  font-weight: 500;
+}   
+
+/* Switch to desktop layout on ANY laptop/tablet */  
+@media (min-width: 600px) {  
+  .header-container {  
+    flex-direction: row;  
+    justify-content: space-between; 
+  }  
+}

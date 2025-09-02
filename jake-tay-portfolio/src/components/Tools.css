@@ -1,0 +1,126 @@
+/* Tools Section - No Horizontal Scroll */
+.tools-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.tools-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.tools-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  padding: 0 1rem;
+}
+
+.tools-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tools-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.tools-scroll * {
+  pointer-events: none;
+}
+
+.tools-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tools-scroll:active {
+  cursor: grabbing;
+}
+
+/* Scroll padding for better edge dragging */
+.scroll-padding {
+  min-width: 2rem;
+  flex-shrink: 0;
+  height: 1px;
+}
+
+.tool-item {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px);
+}
+
+.tool-logo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--accent-primary-rgb), 0.1);
+  border-radius: 20px;
+  border: 2px solid rgba(var(--accent-primary-rgb), 0.2);
+  padding: 10px;
+}
+
+.tool-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tool-item p {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .tools-section {
+    padding: 6rem 0;
+  }
+  
+  .tool-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .tools-container h2 {
+    padding: 0 2rem;
+  }
+  
+  .tools-scroll {
+    padding: 2rem;
+  }
+}
