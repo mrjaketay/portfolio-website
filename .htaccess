@@ -1,0 +1,23 @@
+# SPA routing for React Router on Apache (e.g. Hostinger shared hosting)
+# Place this file in public_html (or your document root) so that all requests
+# are rewritten to index.html and the client handles routing.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request is for an existing file or directory, serve it
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Otherwise send everything to index.html
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
+
+# Optional: cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+</IfModule>
